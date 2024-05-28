@@ -22,7 +22,7 @@ export default function Main() {
       <div className="banner-container">
           <h3 className="main-title">hello<img className="hello-line" src={line}></img></h3>
           <h1 className="main-name">i aM mansouri Cherif</h1>
-          <h5 className="main-info">a front-end DEVELOPER</h5>
+          <h5 className="main-info">a Full-Stck web DEVELOPER</h5>
           <button className="main-button primary_btn">Hire ME</button>
       </div >
       <div className="main-image-wraper">

@@ -6,8 +6,8 @@ export const ServicesData =[
     {
         img: webDev,
         imgClasse:'front-end-img',
-        title:'front-end DEVELOPING',
-        text:'Im ready to provide all my knowledge to convert your design to an interactive and responsive web site using \n HTML5 - CSS3 - JS - React',
+        title:'Full-Stack DEVELOPING',
+        text:"I'm ready to provide all my knowledge to convert your design to an interactive and responsive website concerning the Front-end and the Back-end",
         id:uuid()
     },
     {

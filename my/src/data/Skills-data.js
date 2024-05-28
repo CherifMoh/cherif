@@ -9,6 +9,7 @@ import mongodb from "../assets/mongodb.svg";
 import nextjs from "../assets/nextjs.svg";
 import github from "../assets/github.svg";
 import git from "../assets/Git.svg";
+import tailwind from "../assets/tailwind.svg";
 
 
 export const skills =[
@@ -25,8 +26,8 @@ export const skills =[
       skillName:'Javascript',
       id:uuid(),
     },{
-      skillImg:Wp,
-      skillName:'Wordpress',
+      skillImg:tailwind,
+      skillName:'tailwind css',
       id:uuid(),
     },{
       skillImg:React,

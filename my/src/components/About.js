@@ -10,8 +10,8 @@ export default function About() {
         </div>
         <div className="about-text-container">
           <h2 className='about-tilte'>let’s  Introduce about myself</h2>
-          <p className='about-text'>👨‍💻 Hi,I’m Cherif, a  Front-End web developer based in Algiers, Algeria.<br /></p>
-          <p className='about-text'>Passionate about crafting visually stunning and user-friendly websites. Proficient in HTML, CSS, JavaScript and React-JS, I transform design concepts into responsive, dynamic experiences. Let's collaborate to bring your digital ideas to life with creativity and precision. 🚀<br /></p>
+          <p className='about-text'>👨‍💻 Hi,I’m Cherif, a  Full-Stack web developer based in Algiers, Algeria.<br /></p>
+          <p className='about-text'>Passionate about crafting visually stunning and user-friendly websites. Proficient in HTML, CSS, JavaScript and Next-JS, I transform design concepts into responsive, dynamic experiences. Let's collaborate to bring your digital ideas to life with creativity and precision. 🚀<br /></p>
           <button className="about-btn primary_btn">Hire ME</button>
         </div>
       </div>

@@ -4,85 +4,301 @@
 
 .Portfolio-title{
     padding: 0 5px;
-    max-width: 1140px;
+    max-width: 900px;
     margin: auto;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 15px;
-    line-height: 50px;
+    margin-bottom: 40px;
+    line-height: 46px;
     text-transform: uppercase;
-    height: 200px;
 }
 
 .projects-container{
-    max-width: 1140px;
+    max-width: 900px;
     padding: 0 5px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.project-block{
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 8px;
+    padding: 24px 28px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+}
+
+.project-block:first-of-type{
+    border-width: 1.5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.project-block-header{
+    margin-bottom: 16px;
+}
+
+.project-block-title{
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color: #111827;
+}
+
+.project-block-short{
+    margin: 0;
+    color: #4b5563;
+    font-size: 15px;
+}
+
+.project-block-visual{
+    margin: 18px 0 16px 0;
+}
+
+.project-block-img{
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.project-block-games-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    /* Keep the whole 3x2 grid roughly the same height as the single project image (max-height: 260px). */
+    grid-template-rows: repeat(2, 125px);
 }
 
-.project-card-container{
-    padding: 0 15px;
-    margin-bottom:80px ;
-    text-decoration: none;
+.project-block-games-grid--two{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* Keep visual height close to the 3x2 grid (2 rows x 125px). */
+    grid-template-rows: repeat(1, 250px);
+}
+
+.project-block-game-link{
+    display: block;
+    border-radius: 6px;
     overflow: hidden;
-}
-
-.project-card-img-container{
+    border: 1px solid rgba(0,0,0,0.04);
+    background: #ffffff;
+    height: 100%;
     position: relative;
 }
 
-.project-card-img{
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+.project-block-game-link:hover{
+    border-color: rgba(68, 88, 220, 0.35);
 }
 
-.project-card-title{
-    font-size: 20px;
-    color: #000000;
-    font-weight: 500;
+.project-block-game-img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    display: block;
+}
+
+.project-block-game-overlay{
+    position: absolute;
+    /* Fill the whole thumbnail/link area (no bottom gap). */
+    inset: 0;
+    background: rgba(77, 87, 222, 0.5);
+    opacity: 0;
+    transform: translate(-12px, -12px);
+    transition: opacity 0.4s ease 0s, transform 0.4s ease 0s;
+    border-radius: 6px;
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+.project-block-game-overlay-img{
+    position: absolute;
+    opacity: 0;
+    top: 15%;
+    left: 15%;
+    height: 70px;
+    transform: translate(-50%, -50%) scale(0.85) rotate(-6deg);
+    transition: opacity 0.4s ease 0s, transform 0.4s ease 0s, top 0.4s ease 0s, left 0.4s ease 0s;
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+.project-block-main-link{
+    display: block;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.04);
+    background: #ffffff;
+}
+
+/* Prevent a "double border" frame: the wrapper has the border,
+   so the inner image must not draw its own border. */
+.project-block-main-link .project-block-img{
+    display: block;
+    border: none;
+    border-radius: 0;
+    width: 100%;
+}
+
+.project-block-main-link:hover{
+    border-color: rgba(68, 88, 220, 0.35);
+}
+
+.project-block-main-overlay{
+    position: absolute;
+    /* Fill the whole image/link area (no bottom gap). */
+    inset: 0;
+    background: rgba(77, 87, 222, 0.5);
+    opacity: 0;
+    transform: translate(-12px, -12px);
+    transition: opacity 0.4s ease 0s, transform 0.4s ease 0s;
+    border-radius: 6px;
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+.project-block-main-overlay-img{
+    position: absolute;
+    opacity: 0;
+    top: 15%;
+    left: 15%;
+    height: 70px;
+    transform: translate(-50%, -50%) scale(0.85) rotate(-6deg);
+    transition: opacity 0.4s ease 0s, transform 0.4s ease 0s, top 0.4s ease 0s, left 0.4s ease 0s;
+    pointer-events: none;
+    will-change: opacity, transform;
+}
+
+.project-block-main-link:hover .project-block-main-overlay{
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+.project-block-main-link:hover .project-block-main-overlay-img{
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+
+.project-block-game-link:hover .project-block-game-overlay{
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+.project-block-game-link:hover .project-block-game-overlay-img{
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+
+.project-block-game-img--top-third{
+    /* Show the top portion of the screenshot when the image is cropped. */
+    object-position: 50% 0%;
+}
+
+.project-block-body{
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr;
+    column-gap: 32px;
+    row-gap: 16px;
+}
+
+.project-block-section{
+    margin-bottom: 4px;
+}
+
+.project-block-timeline-duration{
+    /* Make the Duration line span both columns in the 2-col details grid. */
+    grid-column: 1 / -1;
+}
+
+.project-block-experience{
+    /* LinkedIn-like experience block spans both columns. */
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+}
+
+.experience-item{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.experience-title{
+    font-size: 16px;
+    font-weight: 650;
+    color: #1d2226;
+    margin-bottom: 4px;
+}
+
+.experience-meta{
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.experience-meta:last-of-type{
     margin-bottom: 0;
 }
 
-.project-card-text{
-    font-size: 15px;
-    color: #777777;
+.experience-dot{
+    margin: 0 4px;
+}
+
+.experience-en-dash{
+    margin: 0 0;
+}
+
+.project-block-label{
+    margin: 0 0 4px 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6b7280;
+}
+
+.project-block-text{
     margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #374151;
 }
 
-.overlay{
-    border-radius: 5px;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 98%;
-    background: rgba(77, 87, 222, 0.5);
-    opacity: 0;
-    text-align: center;
-    transition: all 0.4s ease 0s;
+.project-block-list{
+    margin: 0;
+    padding-left: 18px;
+    font-size: 14px;
+    color: #374151;
 }
 
-.project-card-img-container:hover .overlay{
-    opacity: 1;
+.project-block-list li{
+    margin-bottom: 2px;
 }
 
-.project-card-img-container:hover .overlay-img{
-    top: 30%;
-    left: 35%;
-    opacity: 1;
+.project-block-links{
+    margin-top: 4px;
 }
 
-.overlay-img{
-    position: absolute;
-    opacity: 0;
-    top: 10%;
-    left: 10%;
-    height: 100px;
-    transition: all 0.4s ease 0s;
+.project-block-links-row{
+    display: flex;
+    gap: 12px;
+}
+
+.project-link{
+    font-size: 14px;
+    color: #4458dc;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.project-link:hover{
+    border-bottom-color: #4458dc;
 }
 
 @media(max-width: 1670px){
@@ -159,12 +375,29 @@ section{
 }
 
 .Portfolio-title{
-    font-size: 28px;
+    font-size: 26px;
     max-width: 400px;
 }
 
-.cards-container,.projects-container{
+.projects-container{
+    max-width: 400px;
+}
+
+.project-block{
+    padding: 20px 18px;
+}
+
+.project-block-body{
     grid-template-columns: 1fr;
+}
+
+.project-block-games-grid{
+    gap: 8px;
+    grid-template-rows: repeat(2, 90px);
+}
+
+.project-block-games-grid--two{
+    grid-template-rows: repeat(1, 180px);
 }
 
 }

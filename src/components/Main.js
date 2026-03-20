@@ -8,9 +8,13 @@ import name from "../assets/name.svg";
 import lamp from "../assets/lamp.svg";
 
 export default function Main() {
+  const scrollToProjects = () => {
+    const el = document.getElementById('Portfolio') || document.querySelector('#Portfolio');
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return(
-    <main id='Main'>
+    <main id='Main' className='reveal-on-scroll'>
       <img src='https://preview.colorlib.com/theme/satner/img/body-bg.png' className='bg-img'></img>
       <img src={purpeldot} className='purpel-dot'></img>
       <img src={greendot} className='green-dot'></img>
@@ -23,7 +27,9 @@ export default function Main() {
           <h3 className="main-title">hello<img className="hello-line" src={line}></img></h3>
           <h1 className="main-name">i aM mansouri Cherif</h1>
           <h5 className="main-info">a Full-Stck web DEVELOPER</h5>
-          <button className="main-button primary_btn">Hire ME</button>
+          <button type="button" className="main-button primary_btn" onClick={scrollToProjects}>
+            Explore Projects
+          </button>
       </div >
       <div className="main-image-wraper">
         <img className="main-image" src="https://preview.colorlib.com/theme/satner/img/banner/home-right.png"></img>

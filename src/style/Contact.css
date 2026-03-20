@@ -37,8 +37,8 @@
 }
 
 .email-text{
-    font-size: 2.7rem;
-    line-height: 3.125rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
     font-weight: bold;
     color: black;
     text-decoration: none;
@@ -49,13 +49,14 @@
 }
 
 .contact-socials-tilte{
-    text-align: left;
+    text-align: center;
     margin-bottom: 25px;
 }
 
 .contact-socials-icons-wrpper{
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+    justify-content: space-around;
 }
 
 .contact-socials-circle{
@@ -67,7 +68,8 @@
     justify-content: center;
     border-radius: 50%;
     z-index: 2;
-    background-color: #4d56de;
+    /* Lighter "white-ish" background for social icons */
+    background-color: #f3f4f6;
 }
 
 .contact-socials-circle::before{
@@ -81,8 +83,8 @@
     border-radius: 50%;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: white;
-    opacity: 0.1;
+    background-color: #ffffff;
+    opacity: 0.18;
 }
 
 
@@ -113,6 +115,7 @@
     .email-text{
       font-size: 30px;
     }
+
   }
   
   @media (max-width:760px){

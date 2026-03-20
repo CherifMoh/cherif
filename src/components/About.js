@@ -2,9 +2,13 @@ import React from 'react';
 import phoneIcon from '../assets/phone-call.svg';
 
 export default function About() {
+  const scrollToContact = () => {
+    const el = document.getElementById('Contact') || document.querySelector('#Contact');
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return(
-    <section id='About' className='about-section'>
+    <section id='About' className='about-section reveal-on-scroll'>
       <div className='about-conatainer'>
         <div className='about-img-container'>
           <img className="about-image" src="https://preview.colorlib.com/theme/satner/img/about-us.png" alt="" />
@@ -17,7 +21,9 @@ export default function About() {
           <p className='about-text'>
             I approach development as system design first, solving technical challenges end-to-end and delivering robust, production-ready solutions. I'm seeking remote opportunities where I can contribute to building scalable, reliable, and secure platforms.
           </p>
-          <button className="about-btn primary_btn">Hire ME</button>
+          <button type="button" className="about-btn primary_btn" onClick={scrollToContact}>
+            Contact Me
+          </button>
         </div>
       </div>
       <div>

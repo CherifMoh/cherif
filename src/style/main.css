@@ -242,3 +242,52 @@ main{
   }
   
 }
+
+/* Main decorative images: roll in when the Main section appears */
+@keyframes rollInFromBelow {
+  0% {
+    opacity: 0;
+    transform: translateY(220px) rotate(-140deg) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) rotate(14deg) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+.reveal-on-scroll--visible .purpel-dot,
+.reveal-on-scroll--visible .green-dot,
+.reveal-on-scroll--visible .heart1,
+.reveal-on-scroll--visible .heart2,
+.reveal-on-scroll--visible .lamp-image1,
+.reveal-on-scroll--visible .lamp-image2,
+.reveal-on-scroll--visible .name-image {
+  animation: rollInFromBelow 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Stagger so it looks intentional */
+.reveal-on-scroll--visible .purpel-dot{ animation-delay: 70ms; }
+.reveal-on-scroll--visible .green-dot{ animation-delay: 120ms; }
+.reveal-on-scroll--visible .heart1{ animation-delay: 170ms; }
+.reveal-on-scroll--visible .heart2{ animation-delay: 220ms; }
+.reveal-on-scroll--visible .lamp-image1{ animation-delay: 270ms; }
+.reveal-on-scroll--visible .lamp-image2{ animation-delay: 320ms; }
+.reveal-on-scroll--visible .name-image{ animation-delay: 370ms; }
+
+@media (prefers-reduced-motion: reduce){
+  .reveal-on-scroll--visible .purpel-dot,
+  .reveal-on-scroll--visible .green-dot,
+  .reveal-on-scroll--visible .heart1,
+  .reveal-on-scroll--visible .heart2,
+  .reveal-on-scroll--visible .lamp-image1,
+  .reveal-on-scroll--visible .lamp-image2,
+  .reveal-on-scroll--visible .name-image {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}

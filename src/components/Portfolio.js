@@ -71,7 +71,7 @@ export default function Portfolio() {
     })();
 
     return (
-      <div key={project.id} className="project-block">
+      <div key={project.id} className="project-block reveal-on-scroll">
         <div className="project-block-header">
           <h3 className="project-block-title">{project.title}</h3>
           {project.shortDescription && (
@@ -211,7 +211,7 @@ export default function Portfolio() {
   });
 
   return (
-    <section id="Portfolio" className="Portfolio-section">
+    <section id="Portfolio" className="Portfolio-section reveal-on-scroll">
       <h2 className="Portfolio-title">
         MY PROJECT
       </h2>

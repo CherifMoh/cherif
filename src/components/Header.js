@@ -34,10 +34,6 @@ export default function Header() {
       slectedSection('.about')
       return 0
     }
-    if(currentScroll<3160){
-      slectedSection('.services')
-      return 0
-    }
     if(currentScroll<4500){
       slectedSection('.portfolio')
       return 0
@@ -104,7 +100,6 @@ export default function Header() {
           <div className='navbar-w'>
                 <a href='#' onClick={()=>slectedSection('.home')} className="selected-nav navBar-elements home">Home</a>
                 <a href='#About' onClick={()=>slectedSection('.about')} className="navBar-elements about">About</a>
-                <a href='#Services' onClick={()=>slectedSection('.services')} className="navBar-elements services">services</a>
                 <a href='#Portfolio' onClick={()=>slectedSection('.portfolio')} className="navBar-elements portfolio">portfolio</a>
                 <a href='#Contact' onClick={()=>slectedSection('.contact')} className="navBar-elements contact">contact</a>
           </div>

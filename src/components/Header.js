@@ -44,25 +44,29 @@ export default function Header() {
     }
   }
 
-  function scrollHandler (){
+  function scrollHandler() {
     const currentScroll = document.documentElement.scrollTop;
-    selctNavOnScroll()
+    selctNavOnScroll();
     if (currentScroll > 100) {
-      setScroll(true)
+      setScroll(true);
       document.querySelector('.header-container').style.height = '70px';
-      document.querySelector('.top-header').style.boxShadow = '0px 3px 16px 0px rgba(0, 0, 0, 0.1)';
-    }else if(currentScroll <= 100){
+      document.querySelector('.top-header').style.boxShadow =
+        '0px 3px 16px 0px rgba(0, 0, 0, 0.1)';
+    } else if (currentScroll <= 100) {
       document.querySelector('.header-container').style.height = '100px';
       document.querySelector('.top-header').style.boxShadow = '';
-      setScroll(false)
+      setScroll(false);
     }
   }
 
+  const scrollHandlerRef = useRef(scrollHandler);
+  scrollHandlerRef.current = scrollHandler;
 
-  useEffect(()=>{
-    window.addEventListener('wheel', scrollHandler)
-    return ()=>window.removeEventListener('wheel', scrollHandler)
-  },[])
+  useEffect(() => {
+    const onWheel = () => scrollHandlerRef.current();
+    window.addEventListener('wheel', onWheel);
+    return () => window.removeEventListener('wheel', onWheel);
+  }, []);
 
   const styles=scrollDown ? {
     position:'fixed',

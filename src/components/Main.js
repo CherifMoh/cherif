@@ -15,16 +15,19 @@ export default function Main() {
 
   return(
     <main id='Main' className='reveal-on-scroll'>
-      <img src='https://preview.colorlib.com/theme/satner/img/body-bg.png' className='bg-img'></img>
-      <img src={purpeldot} className='purpel-dot'></img>
-      <img src={greendot} className='green-dot'></img>
-      <img src={heart} className='heart1'></img>
-      <img src={heart} className='heart2'></img>
-      <img src={name} className='name-image'></img>
-      <img src={lamp} className='lamp-image1'></img>
-      <img src={lamp} className='lamp-image2'></img>
+      <img src="https://preview.colorlib.com/theme/satner/img/body-bg.png" className="bg-img" alt="" />
+      <img src={purpeldot} className="purpel-dot" alt="" />
+      <img src={greendot} className="green-dot" alt="" />
+      <img src={heart} className="heart1" alt="" />
+      <img src={heart} className="heart2" alt="" />
+      <img src={name} className="name-image" alt="Mansouri Cherif" />
+      <img src={lamp} className="lamp-image1" alt="" />
+      <img src={lamp} className="lamp-image2" alt="" />
       <div className="banner-container">
-          <h3 className="main-title">hello<img className="hello-line" src={line}></img></h3>
+          <h3 className="main-title">
+            hello
+            <img className="hello-line" src={line} alt="" />
+          </h3>
           <h1 className="main-name">i aM mansouri Cherif</h1>
           <h5 className="main-info">a Full-Stck web DEVELOPER</h5>
           <button type="button" className="main-button primary_btn" onClick={scrollToProjects}>
@@ -32,7 +35,11 @@ export default function Main() {
           </button>
       </div >
       <div className="main-image-wraper">
-        <img className="main-image" src="https://preview.colorlib.com/theme/satner/img/banner/home-right.png"></img>
+        <img
+          className="main-image"
+          src="https://preview.colorlib.com/theme/satner/img/banner/home-right.png"
+          alt=""
+        />
       </div>
         
     </main>

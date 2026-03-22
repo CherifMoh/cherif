@@ -1,4 +1,4 @@
-import {useState,useEffect} from 'react';
+import { useState, useEffect, useRef } from 'react';
 import logo from "../assets/logo.svg";
 
 export default function Header() {
@@ -87,7 +87,7 @@ export default function Header() {
     <header className='top-header'  style={styles}>
       <div className='header-container'>
         <div className='log-btn-header'>
-          <a href='#' className="logo-container">
+          <a href="#Main" className="logo-container">
               <img className="logo" src={logo} alt="" />
           </a>
           <button className={`navbar-toggler`} onClick={togglerColapsed}>
@@ -98,7 +98,7 @@ export default function Header() {
          </div>
         <nav style={colapsStyle} className="navbar-container">
           <div className='navbar-w'>
-                <a href='#' onClick={()=>slectedSection('.home')} className="selected-nav navBar-elements home">Home</a>
+                <a href="#Main" onClick={()=>slectedSection('.home')} className="selected-nav navBar-elements home">Home</a>
                 <a href='#About' onClick={()=>slectedSection('.about')} className="navBar-elements about">About</a>
                 <a href='#Portfolio' onClick={()=>slectedSection('.portfolio')} className="navBar-elements portfolio">portfolio</a>
                 <a href='#Contact' onClick={()=>slectedSection('.contact')} className="navBar-elements contact">contact</a>

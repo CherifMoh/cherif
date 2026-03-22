@@ -16,11 +16,11 @@ export default function Contact() {
         <div className='contact-socials-wrpper'>
           <div className='contact-socials-tilte'>ON SOCIAL MEDIAS</div>
           <div className='contact-socials-icons-wrpper'>
-            <a class="contact-socials-circle" href="https://instagram.com/cherif_moh7/" title="Instagram link">
+            <a className="contact-socials-circle" href="https://instagram.com/cherif_moh7/" title="Instagram link">
               <img src={instIcon} alt="Instagram link"></img>
             </a>
-            <a className="contact-socials-circle" href="https://github.com/CherifMoh" title="Instagram link">
-              <img src="https://lyesui.github.io/Portfolio/public/images/social/github_.svg" alt="Instagram link"></img>
+            <a className="contact-socials-circle" href="https://github.com/CherifMoh/cherif" title="GitHub — portfolio repo">
+              <img src="https://lyesui.github.io/Portfolio/public/images/social/github_.svg" alt="GitHub link"></img>
             </a>
           </div>
           

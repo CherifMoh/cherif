@@ -1,7 +1,11 @@
 {
   "name": "my",
   "version": "0.1.0",
-  "homepage": "https://cherifmoh.github.io/",
+  "homepage": "https://cherifmoh.github.io/cherif/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CherifMoh/cherif.git"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

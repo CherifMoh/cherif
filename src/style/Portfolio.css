@@ -281,6 +281,21 @@
     margin-bottom: 2px;
 }
 
+.project-block-subsection{
+    margin-bottom: 12px;
+}
+
+.project-block-subsection:last-child{
+    margin-bottom: 0;
+}
+
+.project-block-subtitle{
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
 .project-block-links{
     margin-top: 4px;
 }

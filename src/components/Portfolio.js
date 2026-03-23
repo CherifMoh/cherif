@@ -57,18 +57,8 @@ export default function Portfolio() {
   };
 
   const projectBlocks = ProjectsData.map((project) => {
-    const companyName = (() => {
-      const title = project.title || '';
-      const parts = title.split('—');
-      return (parts[0] || title).trim();
-    })();
-
-    const employmentType = (() => {
-      const roleLower = (project.role || '').toLowerCase();
-      if (roleLower.includes('freelance')) return 'Freelance';
-      if (companyName.toLowerCase() === 'tassyir') return 'Backend Engineer';
-      return 'Project';
-    })();
+    const companyName = project.company || project.title || '';
+    const employmentType = project.employmentType || 'Project';
 
     return (
       <div key={project.id} className="project-block reveal-on-scroll">
@@ -184,9 +174,27 @@ export default function Portfolio() {
             </>
           )}
 
+          {project.sections && project.sections.length > 0 && (
+            <div className="project-block-section">
+              <h4 className="project-block-label">What I Built</h4>
+              {project.sections.map((section) => (
+                <div key={section.title} className="project-block-subsection">
+                  <p className="project-block-subtitle">{section.title}</p>
+                  <ul className="project-block-list">
+                    {section.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+
           {project.challenges && project.challenges.length > 0 && (
             <div className="project-block-section">
-              <h4 className="project-block-label">Key Technical Challenges</h4>
+              {!project.sections || project.sections.length === 0 ? (
+                <h4 className="project-block-label">What I Built</h4>
+              ) : null}
               <ul className="project-block-list">
                 {project.challenges.map((item) => (
                   <li key={item}>{item}</li>
